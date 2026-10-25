@@ -1,0 +1,67 @@
+{
+  "evaluation_timestamp": "2026-10-23T12:37:04.453312+00:00",
+  "dataset_info": {
+    "source": "Port of Rotterdam / European Container Terminal Queue Simulation",
+    "provenance": "SYNTHETIC_BENCHMARK_ROTTERDAM_QUEUE_V1",
+    "total_records": 3000,
+    "train_samples": 2400,
+    "test_samples": 600
+  },
+  "models": {
+    "Random Forest Regressor": {
+      "algorithm": "RandomForestRegressor(n_estimators=160, max_depth=14)",
+      "mae": 0.5483,
+      "rmse": 0.6843,
+      "r2_score": 0.9242
+    },
+    "XGBoost Regressor": {
+      "algorithm": "XGBRegressor(n_estimators=180, learning_rate=0.06, max_depth=5)",
+      "mae": 0.4356,
+      "rmse": 0.5359,
+      "r2_score": 0.9535
+    }
+  },
+  "selected_model": {
+    "name": "XGBoost Regressor",
+    "selection_criteria": "Lowest Root Mean Squared Error (RMSE) on 20% holdout test split",
+    "metrics": {
+      "mae_hours": 0.4356,
+      "rmse_hours": 0.5359,
+      "r2_score": 0.9535
+    },
+    "top_feature_importances": [
+      {
+        "feature": "vessel_type_Ultra Large Container Vessel (ULCV)",
+        "importance": 0.8997
+      },
+      {
+        "feature": "vessel_length_m",
+        "importance": 0.0225
+      },
+      {
+        "feature": "vessel_draft_m",
+        "importance": 0.0188
+      },
+      {
+        "feature": "wind_speed_knots",
+        "importance": 0.0183
+      },
+      {
+        "feature": "berth_occupancy_ratio",
+        "importance": 0.0067
+      },
+      {
+        "feature": "draft_occupancy_stress",
+        "importance": 0.0065
+      },
+      {
+        "feature": "total_teu",
+        "importance": 0.0058
+      },
+      {
+        "feature": "available_cranes",
+        "importance": 0.0049
+      }
+    ]
+  }
+}

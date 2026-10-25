@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Deep Pitch Black & Electric Blue / Azure / Cyan Palette */
+    --port-app-bg: #030712;
+    --port-sidebar-bg: #020409;
+    --port-topbar-bg: #040816;
+    --port-surface-1: #070F22;      /* Card & panel surfaces */
+    --port-surface-2: #0C1938;      /* Elevated / nested surfaces */
+    --port-surface-3: #122450;      /* Active / hover states */
+    --port-border-subtle: #16294D;  /* Delicate separating lines */
+    --port-border-strong: #223D72;  /* Defined structural borders */
+    
+    /* Typography Tones */
+    --port-text-primary: #F8FAFC;   /* Crisp soft off-white */
+    --port-text-secondary: #94A3B8; /* Muted slate */
+    --port-text-tertiary: #64748B;  /* Deeper structural labels */
+    
+    /* Operational Indicators */
+    --port-blue: #3B82F6;           /* Electric blue */
+    --port-blue-hover: #2563EB;
+    --port-cyan: #06B6D4;           /* Luminous cyan */
+    --port-amber: #F59E0B;          /* Approach / caution / alert */
+    --port-amber-hover: #D97706;
+    --port-emerald: #10B981;        /* Berthing confirmed / optimal */
+    --port-rose: #EF4444;           /* Critical alarm / hazard */
+  }
+
+  body {
+    background-color: #030712;
+    color: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    letter-spacing: -0.011em;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
+  }
+}
+
+/* Custom Scrollbar for Dark Blue Console */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #172B50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #25447E;
+}
+
+/* Monospace numerals for timestamps and measurements */
+.font-mono-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Precision border utilities */
+.border-subtle {
+  border-color: #16294D;
+}
+.border-strong {
+  border-color: #223D72;
+}
+
+/* Nautical grid backdrop */
+.maritime-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.07) 1px, transparent 1px);
+}
+
+/* Radar Animations & Telemetry FX */
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 6s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.animate-radar-ping {
+  animation: radarPing 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.radar-scope-circle {
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.tactical-glass {
+  background: rgba(7, 15, 34, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(28, 51, 98, 0.85);
+}
+
+.blue-gradient-glow {
+  box-shadow: 0 0 30px -5px rgba(37, 99, 235, 0.35);
+}
+
+.cyan-gradient-glow {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.35);
+}
